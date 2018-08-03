@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridPane" style="-fx-background-color: #aaaaaa;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.SelectScreenController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <VBox fx:id="listViewVBox" alignment="TOP_CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+         <children>
+            <TextField promptText="Search..." style="-fx-background-color: #eeeeee;">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <ScrollPane fx:id="listViewScrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #aaaaaa;">
+               <content>
+                  <ListView fx:id="modulesListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               </content>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox fx:id="imageVBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #aaaaaa;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+         <children>
+            <Pane fx:id="imageViewPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="765.0" prefWidth="747.0" style="-fx-background-color: #cccccc;">
+               <children>
+                  <ImageView fx:id="imageView" pickOnBounds="true" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Pane>
+            <HBox fx:id="imageHBox" alignment="CENTER" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="747.0" style="-fx-background-color: #cccccc;" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Button fx:id="startModuleButton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #00bbff;" text="Start this module" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Button fx:id="previousPageButton" mnemonicParsing="false" onAction="#previousPage" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: #808080;" text="&lt;-- Previous page">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="nextPageButton" mnemonicParsing="false" onAction="#nextPage" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: #808080;" text="Next page --&gt;">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </VBox>
+   </children>
+</GridPane>
